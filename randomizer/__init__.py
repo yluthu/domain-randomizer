@@ -1,5 +1,11 @@
-from gym.envs.registration import register
+from gym.envs.registration import register as register_gym
 import os.path as osp
+
+def register(id, entry_point, max_episode_steps, kwargs):
+    config_path = kwargs['config']
+    abs_config_path = osp.join(osp.dirname(osp.abspath(__file__)), '..', config_path)
+    kwargs['config'] = abs_config_path
+    register_gym(id=id, entry_point=entry_point, max_episode_steps=max_episode_steps, kwargs=kwargs)
 
 register(
     id='LunarLanderDefault-v0',

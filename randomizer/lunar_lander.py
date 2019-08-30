@@ -81,7 +81,7 @@ class LunarLanderRandomized(gym.Env, EzPickle):
         'video.frames_per_second': FPS
     }
 
-    continuous = True  # False
+    continuous = False
 
     def __init__(self, **kwargs):
         EzPickle.__init__(self)
