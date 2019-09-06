@@ -22,6 +22,13 @@ register(
 )
 
 register(
+    id='LunarLanderFullyRandomized-v0',
+    entry_point='randomizer.lunar_lander:LunarLanderRandomized',
+    max_episode_steps=1000,
+    kwargs={'config': 'randomizer/config/LunarLanderRandomized/full_random.json'}
+)
+
+register(
     id='Pusher3DOFDefault-v0',
     entry_point='randomizer.pusher3dof:PusherEnv3DofEnv',
     max_episode_steps=100,

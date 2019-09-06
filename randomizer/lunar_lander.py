@@ -115,7 +115,7 @@ class LunarLanderRandomized(gym.Env, EzPickle):
 
     def update_randomized_params(self):
         self.main_engine_power = self.dimensions[0].current_value
-        if len(self.dimensions) == 2:
+        if len(self.dimensions) >= 2:
             self.side_engine_power = self.dimensions[1].current_value
 
     def seed(self, seed=None):
