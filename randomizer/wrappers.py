@@ -99,9 +99,10 @@ class RandomActionDelayWrapper(gym.Wrapper):
         self.env.update_randomized_params()
 
     def step(self, action):
-        delay = max(int(np.floor(self.action_delay_mean
-                                 + np.random.randn() * self.action_delay_std)),
-                    0)
+        delay = self.action_delay_mean + np.random.randn() * self.action_delay_std
+        # randomized rounding according to the fractional part
+        delay = int(np.floor(delay)) + int(np.random.random() > delay - np.floor(delay))
+        delay = max(delay, 0)
         while len(self.action_queue) < delay:
             self.action_queue.append(self.action_queue[-1])
         self.action_queue = self.action_queue[:delay] + [action]
