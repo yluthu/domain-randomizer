@@ -43,6 +43,13 @@ register(
 )
 
 register(
+    id='Pusher3DOFFullyRandomized-v0',
+    entry_point='randomizer.pusher3dof:PusherEnv3DofEnv',
+    max_episode_steps=100,
+    kwargs={'config': 'randomizer/config/Pusher3DOFRandomized/full_random.json'}
+)
+
+register(
     id='HumanoidRandomizedEnv-v0',
     entry_point='randomizer.humanoid:HumanoidRandomizedEnv',
     max_episode_steps=1000,
