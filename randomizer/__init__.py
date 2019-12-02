@@ -96,3 +96,24 @@ register(
         'xml_name': 'pusher.xml'
     }
 )
+
+register(
+    id='CartPoleRandomized-v0',
+    entry_point='randomizer.cartpole:CartPoleRandomized',
+    max_episode_steps=200,
+    kwargs={'config': 'randomizer/config/CartPoleRandomized/randomized.json'}
+)
+
+register(
+    id='CartPoleHard-v0',
+    entry_point='randomizer.cartpole:CartPoleRandomized',
+    max_episode_steps=200,
+    kwargs={'config': 'randomizer/config/CartPoleRandomized/hard.json'}
+)
+
+register(
+    id='CartPoleDefault-v0',
+    entry_point='randomizer.cartpole:CartPoleRandomized',
+    max_episode_steps=200,
+    kwargs={'config': 'randomizer/config/CartPoleRandomized/default.json'}
+)

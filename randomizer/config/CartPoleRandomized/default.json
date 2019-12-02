@@ -1,0 +1,23 @@
+{
+  "env": "CartPoleRandomized-v0",
+  "dimensions": [
+    {
+      "name": "masscart",
+      "default": 1.0,
+      "multiplier_min": 1.0,
+      "multiplier_max": 1.0
+    },
+    {
+      "name": "masspole",
+      "default": 0.1,
+      "multiplier_min": 1.0,
+      "multiplier_max": 1.0
+    },
+    {
+      "name": "length",
+      "default": 0.5,
+      "multiplier_min": 1.0,
+      "multiplier_max": 1.0
+    }
+  ]
+}
