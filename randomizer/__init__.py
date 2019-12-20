@@ -43,6 +43,13 @@ register(
 )
 
 register(
+    id='Pusher3DOFFullyRandomized-v0',
+    entry_point='randomizer.pusher3dof:PusherEnv3DofEnv',
+    max_episode_steps=100,
+    kwargs={'config': 'randomizer/config/Pusher3DOFRandomized/full_random.json'}
+)
+
+register(
     id='HumanoidRandomizedEnv-v0',
     entry_point='randomizer.humanoid:HumanoidRandomizedEnv',
     max_episode_steps=1000,
@@ -88,4 +95,25 @@ register(
         'config': 'randomizer/config/ResidualPushRandomized/default.json',
         'xml_name': 'pusher.xml'
     }
+)
+
+register(
+    id='CartPoleRandomized-v0',
+    entry_point='randomizer.cartpole:CartPoleRandomized',
+    max_episode_steps=200,
+    kwargs={'config': 'randomizer/config/CartPoleRandomized/randomized.json'}
+)
+
+register(
+    id='CartPoleHard-v0',
+    entry_point='randomizer.cartpole:CartPoleRandomized',
+    max_episode_steps=200,
+    kwargs={'config': 'randomizer/config/CartPoleRandomized/hard.json'}
+)
+
+register(
+    id='CartPoleDefault-v0',
+    entry_point='randomizer.cartpole:CartPoleRandomized',
+    max_episode_steps=200,
+    kwargs={'config': 'randomizer/config/CartPoleRandomized/default.json'}
 )
